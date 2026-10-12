@@ -83,8 +83,7 @@ These instructions use the modern Docker Compose command: `docker compose`.
 Connect to your gateway over SSH and run:
 
 ```sh
-mkdir -p sensmos-lora
-cd sensmos-lora
+mkdir -p sensmos-lora && cd sensmos-lora
 ```
 
 This creates a working directory where you will keep the Compose file.
@@ -125,9 +124,7 @@ sudo docker compose run --rm sensmos-lora --dry-run
 
 You should see output similar to:
 
-```text
-sensmos-gw-udp listening on lo [DRY-RUN — nothing leaves this box]
-```
+`sensmos-gw-udp listening on lo [DRY-RUN — nothing leaves this box]`
 
 This checks that the container starts and the listener's dry-run mode works. Press `Ctrl+C` to exit if the command remains running.
 
@@ -224,11 +221,15 @@ This guide uses the legacy `docker-compose` command available on older CrankkOS 
 
 ### Step 1 — Create the working directories
 
-Connect to your gateway over SSH and run:
+Connect to your gateway over SSH and run each command individually:
 
 ```sh
 mkdir -p /data/sensmos
+```
+```sh
 cd /data/sensmos
+```
+```sh
 mkdir -p /data/sensmos/lora
 ```
 
@@ -270,9 +271,7 @@ docker-compose run --rm sensmos-lora --dry-run
 
 Expected output:
 
-```text
-sensmos-gw-udp listening on lo [DRY-RUN — nothing leaves this box]
-```
+`sensmos-gw-udp listening on lo [DRY-RUN — nothing leaves this box]`
 
 This checks that the container starts and the listener's dry-run mode works. Press `Ctrl+C` to exit if necessary.
 
