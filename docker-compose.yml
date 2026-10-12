@@ -1,0 +1,15 @@
+services:
+  sensmos-lora:
+    image: ghcr.io/c-man-the-man/sensmos-lora:latest
+    container_name: sensmos-lora
+    restart: unless-stopped
+    cpus: 0.5
+    mem_limit: 256m
+    memswap_limit: 256m
+    network_mode: host
+    cap_add:
+      - NET_RAW
+    environment:
+      SENSMOS_STATE_DIR: /var/lib/sensmos
+    volumes:
+      - /var/lib/sensmos:/var/lib/sensmos
